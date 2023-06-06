@@ -1,6 +1,6 @@
 import os
 import time
-from features import SURF
+from Features import SURF
 from sklearn.cluster import KMeans
 import joblib
 import pickle
@@ -19,21 +19,21 @@ def build_sample_center(paths, centers=500):
     random.shuffle(all_file_path)
     # all_file_path = all_file_path[:500] # 可选，限制处理的图片数量
     print('{} 共计图片数目:{}'.format(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())), len(all_file_path)))
-    if os.path.exists('./pickle/descriptor.pkl'):
-        with open('./pickle/descriptor.pkl', 'rb') as f:
+    if os.path.exists('./descriptor.pkl'):
+        with open('./descriptor.pkl', 'rb') as f:
             descriptor = pickle.load(f)
     else:
         descriptor = get_surf_descriptor(all_file_path)
-        with open('./pickle/descriptor.pkl', 'wb') as f:
+        with open('./descriptor.pkl', 'wb') as f:
             pickle.dump(descriptor, f)
     # 打乱特征点描述符descriptor列表的顺序，并选择其中的前10%作为样本
     random.shuffle(descriptor)
     descriptor = descriptor[:int(len(descriptor) / 10)]
     print('{} 共计特征点描述:{}'.format(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())), len(descriptor)))
     # 如果之前已经创建kmeans模型了则加载即可，否则需要创建
-    if os.path.exists('./model/kmeans-{}.m'.format(centers)):
-        kmeans = joblib.load('./model/kmeans-{}.m'.format(centers))
-        print('loaded {}'.format('./model/kmeans-{}.m'.format(centers)))
+    if os.path.exists('./kmeans.m'):
+        kmeans = joblib.load('./kmeans.m')
+        print('loaded {}'.format('./kmeans.m'))
         param = {'max_iter': 2}
         kmeans = kmeans.set_params(**param)
     else:
@@ -47,7 +47,7 @@ def build_sample_center(paths, centers=500):
     # 要获得预测向量属于哪个类别/要获得与类别中心的距离
     print('{} kmeans聚类模型创建完毕'.format(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))))
     # 保存模型
-    joblib.dump(kmeans, './model/kmeans-{}.m'.format(centers))
+    joblib.dump(kmeans, './kmeans.m'.format(centers))
 
 
 # 获取图片的SURF特征点描述

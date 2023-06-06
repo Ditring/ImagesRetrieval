@@ -10,7 +10,7 @@ import joblib
 app = Flask(__name__)
 features = None
 
-kmeans_model = joblib.load('./model/kmeans.m')  # 加载k-means模型
+kmeans_model = joblib.load('./kmeans.m')  # 加载k-means模型
 
 def search_top_k(k, img_name, similarity=CosSimilarity()):
     anchor = None
@@ -42,7 +42,7 @@ def search():
         image = request.files['image']
         if image.filename != '':
             # 选择存储的路径
-            save_path = './temp/'
+            save_path = './'
             if not os.path.exists(save_path):
                 os.makedirs(save_path)
 
@@ -51,8 +51,8 @@ def search():
             global features
             # 如果features为空证明还未加载特征库，先加载一下
             if features is None:
-                if os.path.exists('./pickle/features.pkl'):
-                    with open('./pickle/features.pkl', 'rb') as f:
+                if os.path.exists('./features.pkl'):
+                    with open('./features.pkl', 'rb') as f:
                         features = pickle.load(f)
             result = {}
             # 如果未创建特征库则需要先创建特征库，如果已创建则返回前5个最相似的图片
@@ -61,7 +61,7 @@ def search():
                 result['message'] = '尚未建立特征库，请先运行BuildImageFeature.py文件'
             else:
                 result['code'] = 1
-                result['img_names'] = search_top_k(5, './temp/' + image.filename)
+                result['img_names'] = search_top_k(5, './' + image.filename)
             return jsonify(result)
 
 
@@ -72,8 +72,8 @@ def get_search_result():
     global features
     # 如果features为空证明还未加载特征库，先加载一下
     if features is None:
-        if os.path.exists('./pickle/features.pkl'):
-            with open('./pickle/features.pkl', 'rb') as f:
+        if os.path.exists('./features.pkl'):
+            with open('./features.pkl', 'rb') as f:
                 features = pickle.load(f)
     result = {}
     # 如果未创建特征库则需要先创建特征库，如果已创建则返回前5个最相似的图片

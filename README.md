@@ -27,11 +27,13 @@
 - 点击查询结果中的缩略图可以查看搜索结果的高清大图
 ### 数据集介绍
 数据集是The Oxford Buildings Dataset
+
 牛津建筑数据集包含 5062 张图像，这些图像是通过搜索特定的牛津地标从Flickr收集的。
 ### 系统主要模块
 整个系统包括三个部分：输出KMeans模型，建立图片特征库，通过Flask运行web应用
 ## 环境
 ```shell
+windwos 10
 python 3.7
 opencv-python 3.4.2.16
 opencv-contrib-python 3.4.2.16
@@ -46,22 +48,27 @@ Flask 1.1.2
 #### Step2：
 下载数据集，The Oxford Buildings Dataset
 
-下载完成后将数据集放到指定的文件夹中，并在代码中数据集地址进行相应的修改，默认地址为"./static/dataset/"
+https://bhpan.buaa.edu.cn:443/link/7EDD56D581D11F0970ED5270530EE2DE
 
-配置数据集路径！！！
+下载完成后将数据集放到指定的文件夹中，并在代码中数据集地址进行相应的修改，默认地址为"./static/dataset/"
+该地址没有文件夹需要手动创建
 
 #### Step3：
-运行ClusteringAnalysis.py训练K-Means模型
-
-配置数据集路径！！！
+运行clustering_analysis.py训练K-Means模型
 
 #### Step4：
-运行BuildImageFeature.py建立图片特征库
-
-配置数据集路径！！！
+运行image_feature.py建立图像特征库
 
 #### Step5：
 运行Flask
+在项目文件夹下使用cmd或者是pycharm的terminal键入以下命令
+```shell
+$env:FLASK_APP = "run.py"
+flask run
+```
+
+## 效果演示
+见报告，
 
 ## 相关文章
 #### 策略算法工程师之路-基于内容的图像检索(CBIR)
