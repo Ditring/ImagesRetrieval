@@ -66,9 +66,11 @@ https://bhpan.buaa.edu.cn:443/link/7EDD56D581D11F0970ED5270530EE2DE
 $env:FLASK_APP = "run.py"
 flask run
 ```
+不行的话可以直接在pycharm里右键run.py，点击Run 'Flask(run.py)'即可
+运行成功访问 http://127.0.0.1:5000 进入系统
 
 ## 效果演示
-见报告，
+见报告
 
 ## 相关文章
 #### 策略算法工程师之路-基于内容的图像检索(CBIR)

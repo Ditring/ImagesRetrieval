@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, jsonify
 from common import CosSimilarity
 import numpy as np
 import random
-from features import SURF
+from Features import SURF
 import joblib
 
 app = Flask(__name__)
