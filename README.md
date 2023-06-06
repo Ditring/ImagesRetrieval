@@ -70,7 +70,9 @@ flask run
 运行成功访问 http://127.0.0.1:5000 进入系统
 
 ## 效果演示
-[效果图](https://github.com/Ditring/ImagesRetrieval/blob/master/static/pic/show.gif)
+<div align="center">
+  <img src="[https://github.com/******/dbscan_clustering_algorithm/blob/master/data/DBSCAN.png](https://github.com/Ditring/ImagesRetrieval/blob/master/static/pic/show.gif)">
+</div>
 
 ## 相关文章
 #### 策略算法工程师之路-基于内容的图像检索(CBIR)
