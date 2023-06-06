@@ -1,4 +1,4 @@
-# ImageSearch
+# ImageRetrieval
 计算机视觉课程大作业，图像检索系统
 
 ## 内容列表
