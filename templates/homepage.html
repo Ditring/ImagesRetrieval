@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>图像检索系统</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .image-upload-btn {
+            color: #fff;
+            background-color: #067bef;
+            border-color: #067bef;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .image-upload-btn input[type="file"] {
+            display: none;
+        }
+
+        .image-btn {
+            color: #fff;
+            background-color: #ffffff;
+            border-color: #067bef;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .image-btn input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>欢迎</h1>
+    <h4>点击图片或按钮上传图片进行查询</h4>
+    <br>
+    <form name="form0" id="form0">
+        <label for="file0" class="image-upload-btn">
+            选择文件
+            <input type="file" name="file0" id="file0" multiple="multiple"/>
+        </label><br>
+        <h3>查询图像</h3>
+        <label for="file0" class="image-btn">
+            <img src="/static/pic/thiswillnevererror.png" id="img0" style="width: 40rem;height: 40rem;object-fit: contain;">
+        </label><br>
+    </form>
+    <br>
+    <div id='search' class="row pre-scrollable" style="max-height:370px">
+    </div>
+    <h3>查询结果</h3>
+    <h4>点击查看大图</h4>
+    <div id="result" class="row" style="display:none">
+        <div class="col-md-3">
+            <a href="/static/dataset/all_souls_000000.jpg" class="thumbnail"
+               data-mfp-src="/static/dataset/all_souls_000000.jpg">
+                <img src="/static/dataset/all_souls_000000.jpg" alt="all_souls_000000">
+                <div class="caption">
+                    all_souls_000000
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/static/dataset/all_souls_000000.jpg" class="thumbnail"
+               data-mfp-src="/static/dataset/all_souls_000000.jpg">
+                <img src="/static/dataset/all_souls_000000.jpg" alt="all_souls_000000">
+                <div class="caption">
+                    all_souls_000000
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/static/dataset/all_souls_000000.jpg" class="thumbnail"
+               data-mfp-src="/static/dataset/all_souls_000000.jpg">
+                <img src="/static/dataset/all_souls_000000.jpg" alt="all_souls_000000">
+                <div class="caption">
+                    all_souls_000000
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/static/dataset/all_souls_000000.jpg" class="thumbnail"
+               data-mfp-src="/static/dataset/all_souls_000000.jpg">
+                <img src="/static/dataset/all_souls_000000.jpg" alt="all_souls_000000">
+                <div class="caption">
+                    all_souls_000000
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/static/dataset/all_souls_000000.jpg" class="thumbnail"
+               data-mfp-src="/static/dataset/all_souls_000000.jpg">
+                <img src="/static/dataset/all_souls_000000.jpg" alt="all_souls_000000">
+                <div class="caption">
+                    all_souls_000000
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<script src="/static/jquery-3.4.1.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/show.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+
+</body>
+</html>
